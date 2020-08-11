@@ -1,15 +1,15 @@
-%% DBSI prostate processing by yzz at 8/13/2018;
+(* ::Package:: *)
 
 clear all;
-maps = {'b0_map','dti_adc_map','dti_fa_map','dti_axial_map','dti_radial_map','iso_adc_map','restricted_ratio_1_map','restricted_ratio_2_map','hindered_ratio_map','water_ratio_map','fiber_ratio_map'};
-dirDBSI = ['Z:\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\2018_08_12\6630_JR100734\PELVIS_CHANGHAI_20180813_092531_557000\DBSI_results_0.1_0.1_0.8_0.8_2.3_2.3'];
-%savePath = ['Z:\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\2018_08_12\6630_JR100734\PELVIS_CHANGHAI_20180813_092531_557000\DBSI_results_0.1_0.1_0.8_0.8_2.3_2.3'];
-%if ~exist(savePath, 'dir');
-  %mkdir(savePath);
-%end;
+maps = {'b0_map','dti_adc _map','dti_fa _map','dti_axial _map','dti_radial _map','iso_adc _map','restricted_ratio _ 1_map','restricted_ratio _ 2_map','hindered_ratio _map','water_ratio _map','fiber_ratio _map'};
+dirDBSI = ['Z:\Zezhong_Ye\Prostate_Cancer_Project _Shanghai\2018 _ 08_ 12\6630_JR100734\PELVIS_CHANGHAI_ 20180813_ 092531_ 557000\DBSI_results_ 0.1_ 0.1_ 0.8_ 0.8_ 2.3_ 2.3'];
+% savePath = ['Z:\Zezhong_Ye\Prostate_Cancer_Project _Shanghai\2018 _ 08_ 12\6630_JR100734\PELVIS_CHANGHAI_ 20180813_ 092531_ 557000\DBSI_results_ 0.1_ 0.1_ 0.8_ 0.8_ 2.3_ 2.3'];
+% if ~exist(savePath, 'dir');
+  % mkdir(savePath);
+% end;
 
-% generate DWI_1500 image
-filename_adc = fullfile(dirDBSI,'dti_adc_map.nii');
+% generate DWI_ 1500 image
+filename_adc = fullfile(dirDBSI,'dti_adc _map.nii');
 filename_b0 = fullfile(dirDBSI,'b0_map.nii');
 adc = load_nii(filename_adc);
 ADC = adc.img;
@@ -19,7 +19,7 @@ DWI = B0.*exp(-3.0*ADC);
 DWI = flipdim(DWI,2); 
 DWI = imresize(DWI,2); 
 nii = make_nii(DWI);
-save_nii(nii,'dwi_3000.nii');
+save_nii(nii,'dwi_ 3000.nii');
 
 for i = 1:numel(maps);
     map = maps{i};
