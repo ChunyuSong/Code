@@ -1,11 +1,6 @@
 #----------------------------------------------------------------------
 # extract voxel information
 # get metric values from MRI
-#
-# Author: Zezhong Ye & Ajit George, Washington University School of Medicine
-# Copyright: Copyright 2020, Washington University School of Medicine
-# Email: ze-zhong@wustl.edu
-# Date: 01.16.2020   
 #     
 #-------------------------------------------------------------------------------------------
 
@@ -215,9 +210,9 @@ class voxel(object):
  
 if __name__ == '__main__':
 
-    proj_dir    = r'\\10.39.42.102\temp\Zezhong_Ye\2020_MS_Grant\MS_P01'
-    result_dir  = r'\\10.39.42.102\temp\Zezhong_Ye\2020_MS_Grant\MS_P01'
-    log_dir     = r'\\10.39.42.102\temp\Zezhong_Ye\2020_MS_Grant\MS_P01\log'
+    proj_dir    = r'\\10.39.42.102\temp\2020_MS_Grant\MS_P01'
+    result_dir  = r'\\10.39.42.102\temp\2020_MS_Grant\MS_P01'
+    log_dir     = r'\\10.39.42.102\temp\2020_MS_Grant\MS_P01\log'
     DBSI_folder = 'DBSI_results_%s_%s_%s_%s'     
     csv_name    = 'MS_lesion_voxel'
     roi_1       = 'mask.nii.gz'            

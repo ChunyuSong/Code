@@ -1,5 +1,4 @@
-### created by yzz for the classification of the lesion types of multiple sclerosis on 2019/02
-### revised by Peng Sun on 2019/03
+
 
 import pandas as pd
 import glob2 as glob
@@ -37,8 +36,8 @@ activation = 'tanh' # activation function: tanh, relu
 solver = 'adam' # optimized function
 
 print("loading data: start...")
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI'
-results_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI\results'
+project_dir = r'\\10.39.42.102\temp\2019_MS\AI'
+results_dir = r'\\10.39.42.102\temp\2019_MS\AI\results'
 
 #complete list of result maps
 maps_list = [

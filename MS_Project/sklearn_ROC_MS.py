@@ -2,9 +2,6 @@
 #------------------------------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # TensorBoard support:
 #   :scalars:
 #     - accuracy
@@ -59,8 +56,8 @@ from sklearn.preprocessing import StandardScaler
 
 print("PCa DNN classification ROC analysis: start...")
 
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI'
-results_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI\results'
+project_dir = r'\\10.39.42.102\temp\2019_MS\AI'
+results_dir = r'\\10.39.42.102\temp\2019_MS\AI\results'
 
 # project_dir = r'\\C:\Users\Zye01\Desktop\MS_2019'
 # results_dir = r'\\C:\Users\Zye01\Desktop\MS_2019'

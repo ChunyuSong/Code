@@ -21,8 +21,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 print("loading data: start...")
 
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI'
-results_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI\results'
+project_dir = r'\\10.39.42.102\temp\2019_MS\AI'
+results_dir = r'\\10.39.42.102\temp\2019_MS\AI\results'
 
 df = pd.read_csv(os.path.join(project_dir, '20190302.csv'))
                 

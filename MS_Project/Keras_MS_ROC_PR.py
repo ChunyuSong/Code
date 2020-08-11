@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # TensorBoard support:
 #   :scalars:
 #     - accuracy
@@ -551,9 +548,9 @@ if __name__ == '__main__':
 
 
     # data and results path 
-    project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI'
-    result_dir  = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI\result'
-    log_dir     = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI\log'
+    project_dir = r'\\10.39.42.102\temp\2019_MS\AI'
+    result_dir  = r'\\10.39.42.102\temp\2019_MS\AI\result'
+    log_dir     = r'\\10.39.42.102\temp\2019_MS\AI\log'
     file        = '20190302.csv'
 
     # ----------------------------------------------------------------------------------
