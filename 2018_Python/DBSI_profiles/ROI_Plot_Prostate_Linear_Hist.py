@@ -14,7 +14,7 @@ def main(file_path = '',bin=128):
     if file_path == '':
         #file_path = filedialog.askopenfilename(title="Select Statistics File")
         #bin = float(raw_input("Please enter number of bins for Histogram plot\n"))
-        file_path = 'Z:\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\PCa_with_biopsy\011_XU_YUN_LIN'
+        file_path = 'Z:\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\PCa_with_biopsy\011_XU_YUN_LIN'
         bin = 100
 
     pathname, filename = ntpath.split(file_path)

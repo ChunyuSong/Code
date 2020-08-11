@@ -21,8 +21,8 @@ from sklearn.preprocessing import StandardScaler
 
 print("PCa DNN classification ROC analysis: start...")
 
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI'
-results_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_MS\AI\results'
+project_dir = r'\\10.39.42.102\temp\2019_MS\AI'
+results_dir = r'\\10.39.42.102\temp\2019_MS\AI\results'
 
 # load data from excel files
 print("loading data: start...")

@@ -20,7 +20,7 @@ from matplotlib.pylab import *
 
 # load data from excel files
 #path = r'C:\Users\csong01\Desktop\PCA_in_vivo_data_excel_8'
-path = r'/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCA_in_vivo_data_excel'
+path = r'/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCA_in_vivo_data_excel'
 filenames = glob.glob(path + "/*.xlsx")
 
 df = pd.DataFrame()

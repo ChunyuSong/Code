@@ -1,4 +1,3 @@
-# modified by YZZ on scripts from Ajit at 03/01/2018;
 # plot DHI diffusion profiles and DTI ADC profiles;
 
 

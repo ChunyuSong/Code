@@ -1,5 +1,4 @@
 ### generate DBSI maps in one panel;
-### created by YZZ on 9/6/2018;
 
 import numpy as np
 import nibabel as nib

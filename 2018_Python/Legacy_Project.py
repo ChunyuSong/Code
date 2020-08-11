@@ -23,11 +23,11 @@ from sklearn.preprocessing import StandardScaler
 #%%time
 print("Deep Neural Network for PCa grade classification: start...")
 
-# project_dir = '/bmrp092temp/Zezhong_Ye/2018_Legacy_Project/machine_learning'
-# results_dir = '/bmrp092temp/Zezhong_Ye/2018_Legacy_Project/machine_learning'
+# project_dir = '/bmrp092temp/2018_Legacy_Project/machine_learning'
+# results_dir = '/bmrp092temp/2018_Legacy_Project/machine_learning'
 
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2018_Legacy_Project\machine_learning'
-results_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2018_Legacy_Project\machine_learning'
+project_dir = r'\\10.39.42.102\temp\2018_Legacy_Project\machine_learning'
+results_dir = r'\\10.39.42.102\temp\2018_Legacy_Project\machine_learning'
 
 # load data from excel files
 print("loading data: start...")

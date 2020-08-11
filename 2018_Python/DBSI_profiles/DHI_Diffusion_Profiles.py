@@ -13,7 +13,7 @@ import matplotlib.patches as mpatches
 def main(file_path = '', bin=128):
     if file_path == '':
         file_path = tkFileDialog.askopenfilename(title="Select Statistics File")
-        #file_path = r"\\Z:10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\PCa_with_biopsy\011_XU_YUN_LIN"
+        #file_path = r"\\Z:10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\PCa_with_biopsy\011_XU_YUN_LIN"
         #bin = float(raw_input("Please enter number of bins for Histogram plot\n"))
         bin = '100'
         pathname, filename = ntpath.split(file_path)

@@ -1,6 +1,3 @@
-#### created by Ajit George
-#### eidted by YZZ on 05/30/2018
-
 import os
 import tkFileDialog
 import re

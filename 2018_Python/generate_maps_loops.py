@@ -1,5 +1,4 @@
 ### generate DBSI maps in one panel;
-### created by YZZ on 9/6/2018;
 
 import numpy as np
 import nibabel as nib
@@ -84,7 +83,7 @@ if __name__ == '__main__':
     fs_2   = 8
     interp = 'gaussian'
 
-    proj_dir   = r"\\10.39.42.102\temp\Zezhong_Ye\2018_Legacy_Project\MRI"
+    proj_dir   = r"\\10.39.42.102\temp\2018_Legacy_Project\MRI"
     dbsi_dir   = 'DBSI_results_0.2_0.2_0.8_0.8_2_2'
     sample_dir = 'L008_TN2'
             

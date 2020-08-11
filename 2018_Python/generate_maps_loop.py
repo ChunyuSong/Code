@@ -1,5 +1,4 @@
 ### generate DBSI maps in one panel;
-### created by YZZ on 9/6/2018;
 
 import numpy as np
 import nibabel as nib
@@ -21,7 +20,7 @@ def generating_DBSI_maps():
     interpolation = 'gaussian'
 
     # data folder path
-    proj_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2018_HTAN\MRI'
+    proj_dir = r'\\10.39.42.102\temp\2018_HTAN\MRI'
     dbsi_dir = 'DBSI_results_0.1_0.1_0.8_0.8_1.5_1.5'
 
     sample_dir = 's_2019030602'

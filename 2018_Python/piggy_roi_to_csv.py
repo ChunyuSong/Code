@@ -2,10 +2,6 @@
 
 """this function is a library to extra roi numbers to csv."""
 
-__author__      = "Peng Sun, Washington University in St. Louis"
-__copyright__   = "Copyright 2018, Washington University in St. Louis"
-__email__ = "pengsun@wustl.edu"
-
 import os
 import glob, copy
 import nibabel as nib

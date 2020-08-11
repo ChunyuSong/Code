@@ -5,7 +5,7 @@ import ConfigParser
 
 
 def main():
-    data_path = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/WU_Class_Data/'
+    data_path = '/bmrp092temp/Prostate_Cancer_ex_vivo/WU_Class_Data/'
     files=[]
     eng = matlab.engine.start_matlab()
     eng.addpath('/bmrs090temp/dbsi_release/','/bmrs090temp/dbsi_release/Misc/','/bmrs090temp/dbsi_release/Misc/NIfTI_20140122/')
