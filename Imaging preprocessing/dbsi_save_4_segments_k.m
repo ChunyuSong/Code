@@ -1,30 +1,28 @@
+(* ::Package:: *)
+
 function dbsi_save(ini_file)
 % RawOutputFileName is the filename of the output class 'classOutput'
 % after load the raw output file, class named as 'cRawData'
 % function of output module to generate FDF maps
 % 
-% 2012-09-04: created by Peng
-% 2015-01-20: create nifti from image data, independent from the source 
-% file format.
-% format option: 'nii' or 'ana'
-% 2016-05-03: edited by Ze-Zhong, use four segments for isotropic components to define inflammtion, tumor cells/ cytoxic edema and, vasogenic edema and necrosis/ CSF;
+
 
 
 if nargin < 1
     if exist('DBSIClassData.mat','file')
-        dbsi_class_file = 'DBSIClassData.mat';
+        dbsi_class _file = 'DBSIClassData.mat';
         data_dir = pwd;
     else
-        [dbsi_class_file,data_dir,filter_index] = uigetfile(pwd,'Please select the DBSIClassData mat file');
-        dbsi_class_file = fullfile(data_dir, dbsi_class_file);
+        [dbsi_class _file,data_dir,filter_index] = uigetfile(pwd,'Please select the DBSIClassData mat file');
+        dbsi_class _file = fullfile(data_dir, dbsi_class _file);
     end
-    load(dbsi_class_file); 
+    load(dbsi_class _file); 
     if ~exist('cRawData')
         disp('this is not a proper DBSI output mat file, program exit!')
         return;
     end
     
-    prompt = {'restricted_ratio_1 threshold(range from 0 to ):','restricted_ratio_2 threshold(Range from ):','restricted_ratio_2 threshold(Range to ):','hindered_ratio threshold(Range from ):','hindered_ratio threshold(Range to ):','CSF threshold(Range to infinity):'};
+    prompt = {'restricted_ratio _ 1 threshold(range from 0 to ):','restricted_ratio _ 2 threshold(Range from ):','restricted_ratio _ 2 threshold(Range to ):','hindered_ratio threshold(Range from ):','hindered_ratio threshold(Range to ):','CSF threshold(Range to infinity):'};
     dlg_title = 'Input thresholds to differentiate isotropic components';
     num_lines = 1;
     def = {'0.2','0.2','0.8','0.8','2.0','2.0'};
@@ -60,7 +58,7 @@ if nargin < 1
         num_lines = 1;
         def = {'1','1','1'};
         answer = inputdlg(prompt,dlg_title,num_lines,def);
-        output_fib_res = [str2num(answer{1}) str2num(answer{2}) str2num(answer{3})]; 
+        output_fib _res = [str2num(answer{1}) str2num(answer{2}) str2num(answer{3})]; 
     end
 else
     if ~exist(ini_file,'file')
@@ -74,12 +72,12 @@ else
     if isempty(data_dir)
         data_dir = pwd;
     end
-    dbsi_class_file = ini.GetValues('DBSI', 'dbsi_class_file');
+    dbsi_class _file = ini.GetValues('DBSI', 'dbsi_class _file');
     output_option = ini.GetValues('OUTPUT', 'output_option');
     output_format = ini.GetValues('OUTPUT', 'output_format');
     iso_threshold = ini.GetValues('OUTPUT', 'iso_threshold');
     if isempty(iso_threshold)
-        prompt = {'restricted_ratio_1 threshold(range from 0 to ):','restricted_ratio_2 threshold(Range from ):','restricted_ratio_2 threshold(Range to ):','hindered_ratio threshold(Range from ):','hindered_ratio threshold(Range to ):','CSF threshold(Range to infinity):'};
+        prompt = {'restricted_ratio _ 1 threshold(range from 0 to ):','restricted_ratio _ 2 threshold(Range from ):','restricted_ratio _ 2 threshold(Range to ):','hindered_ratio threshold(Range from ):','hindered_ratio threshold(Range to ):','CSF threshold(Range to infinity):'};
         dlg_title = 'Input thresholds to differentiate isotropic components';
         num_lines = 1;
           def = {'0.2','0.2','0.8','0.8','2.0','2.0'};
@@ -89,21 +87,21 @@ else
     end
     iso_threshold = 10^-3* iso_threshold;% Adjust unit
     output_fib = ini.GetValues('OUTPUT', 'output_fib');
-    output_fib_res = ini.GetValues('OUTPUT','output_fib_res');
-    if isempty(output_fib_res)
-        output_fib_res = [1 1 1];
+    output_fib _res = ini.GetValues('OUTPUT','output_fib _res');
+    if isempty(output_fib _res)
+        output_fib _res = [1 1 1];
     end
     
-    dbsi_class_file_full = fullfile(data_dir,dbsi_class_file);
-    if ~exist(dbsi_class_file_full,'file')
+    dbsi_class _file _full = fullfile(data_dir,dbsi_class _file);
+    if ~exist(dbsi_class _file _full,'file')
         disp('can''t find DBSI output mat file in data_dir, tried search current folder');
-        dbsi_class_file_full = fullfile(pwd,dbsi_class_file);
-        if ~exist(dbsi_class_file_full,'file')
+        dbsi_class _file _full = fullfile(pwd,dbsi_class _file);
+        if ~exist(dbsi_class _file _full,'file')
             disp('can''t not find DBSI output mat file in data_dir and local folder, program exit!')
             return;
         end        
     end
-    load(dbsi_class_file_full); 
+    load(dbsi_class _file _full); 
     if ~exist('cRawData','var')
         disp('this is not a proper DBSI output mat file, program exit!')
         return;
@@ -113,60 +111,60 @@ end
 copyfile(which('versions.txt'),fullfile(data_dir,'save.version'));
 
 outlist_clean = {'b0_map',...
-    'dti_axial_map',...
-    'dti_radial_map',...
-    'dti_adc_map',...
-    'dti_fa_map',...
-    'fiber_ratio_map',...
-    'fiber1_axial_map',...
-    'fiber1_radial_map',...
-    'fiber1_fa_map',...
-    'restricted_ratio_1_map',...
-    'restricted_ratio_2_map',...
-    'hindered_ratio_map',...
-    'water_ratio_map',...
+    'dti_axial _map',...
+    'dti_radial _map',...
+    'dti_adc _map',...
+    'dti_fa _map',...
+    'fiber_ratio _map',...
+    'fiber1_axial _map',...
+    'fiber1_radial _map',...
+    'fiber1_fa _map',...
+    'restricted_ratio _ 1_map',...
+    'restricted_ratio _ 2_map',...
+    'hindered_ratio _map',...
+    'water_ratio _map',...
     };
 
 outlist_full = {'b0_map',...
-    'model_v_map',...
-    'dti_axial_map',...
-    'dti_radial_map',...
-    'dti_adc_map',...
-    'dti_fa_map',...
-    'dti_dirx_map',...
-    'dti_diry_map',...
-    'dti_dirz_map',...
-    'dti_rgba_map',...
-    'dti_rgba_map_itk',...
-    'dti_r_map',...
-    'dti_g_map',...
-    'dti_b_map',...
-    'fiber_ratio_map',...
-    'fiber1_axial_map',...
-    'fiber1_radial_map',...
-    'fiber1_fa_map',...
-    'fiber1_fiber_ratio_map',...
-    'fiber1_rgba_map',...
-    'fiber1_dirx_map',...
-    'fiber1_diry_map',...
-    'fiber1_dirz_map',...
-    'fiber2_axial_map',...
-    'fiber2_radial_map',...
-    'fiber2_fa_map',...
-    'fiber2_fiber_ratio_map',...
-    'fiber2_dirx_map',...
-    'fiber2_diry_map',...
-    'fiber2_dirz_map',...
-    'restricted_ratio_1_map',...
-    'restricted_adc_1_map',...
-    'restricted_ratio_2_map',...
-    'restricted_adc_2_map',...
-    'hindered_ratio_map',...
-    'hindered_adc_map',...
-    'water_ratio_map',...
-    'water_adc_map',...
-    'fraction_rgba_map',...
-    'fiber1_rgba_map_itk',...
+    'model_v _map',...
+    'dti_axial _map',...
+    'dti_radial _map',...
+    'dti_adc _map',...
+    'dti_fa _map',...
+    'dti_dirx _map',...
+    'dti_diry _map',...
+    'dti_dirz _map',...
+    'dti_rgba _map',...
+    'dti_rgba _map _itk',...
+    'dti_r _map',...
+    'dti_g _map',...
+    'dti_b _map',...
+    'fiber_ratio _map',...
+    'fiber1_axial _map',...
+    'fiber1_radial _map',...
+    'fiber1_fa _map',...
+    'fiber1_fiber _ratio _map',...
+    'fiber1_rgba _map',...
+    'fiber1_dirx _map',...
+    'fiber1_diry _map',...
+    'fiber1_dirz _map',...
+    'fiber2_axial _map',...
+    'fiber2_radial _map',...
+    'fiber2_fa _map',...
+    'fiber2_fiber _ratio _map',...
+    'fiber2_dirx _map',...
+    'fiber2_diry _map',...
+    'fiber2_dirz _map',...
+    'restricted_ratio _ 1_map',...
+    'restricted_adc _ 1_map',...
+    'restricted_ratio _ 2_map',...
+    'restricted_adc _ 2_map',...
+    'hindered_ratio _map',...
+    'hindered_adc _map',...
+    'water_ratio _map',...
+    'water_adc _map',...
+    'fraction_rgba _map',...
+    'fiber1_rgba _map _itk',...
     };
 
 if output_option == 1
@@ -184,121 +182,121 @@ total_ratio = sum([cRawData.DBSI_aFiber1Ratio;cRawData.DBSI_aFiber2Ratio;cRawDat
 cRawData.DBSI_aFiber1Ratio = cRawData.DBSI_aFiber1Ratio./total_ratio;
 cRawData.DBSI_aFiber2Ratio = cRawData.DBSI_aFiber2Ratio./total_ratio;
 
-d1st_isotropic_grid = cRawData.DBSI_iIsoSpecGrid < iso_threshold(1);
-d2nd_isotropic_grid = cRawData.DBSI_iIsoSpecGrid < iso_threshold(3) & cRawData.DBSI_iIsoSpecGrid > iso_threshold(2) ;
-d3rd_isotropic_grid = cRawData.DBSI_iIsoSpecGrid < iso_threshold(5) & cRawData.DBSI_iIsoSpecGrid > iso_threshold(4) ;
-d4th_isotropic_grid = cRawData.DBSI_iIsoSpecGrid > iso_threshold(6);
-d1st_isotropic_ratio = sum(cRawData.DBSI_aIsoSpecdata(d1st_isotropic_grid,:),1)./total_ratio;
-d2nd_isotropic_ratio = sum(cRawData.DBSI_aIsoSpecdata(d2nd_isotropic_grid,:),1)./total_ratio;
-d3rd_isotropic_ratio = sum(cRawData.DBSI_aIsoSpecdata(d3rd_isotropic_grid,:),1)./total_ratio;
-d4th_isotropic_ratio = sum(cRawData.DBSI_aIsoSpecdata(d4th_isotropic_grid,:),1)./total_ratio;
-d1st_isotropic_diff = cRawData.DBSI_iIsoSpecGrid(d1st_isotropic_grid)*cRawData.DBSI_aIsoSpecdata(d1st_isotropic_grid,:);
-d2nd_isotropic_diff = cRawData.DBSI_iIsoSpecGrid(d2nd_isotropic_grid)*cRawData.DBSI_aIsoSpecdata(d2nd_isotropic_grid,:);
-d3rd_isotropic_diff = cRawData.DBSI_iIsoSpecGrid(d3rd_isotropic_grid)*cRawData.DBSI_aIsoSpecdata(d3rd_isotropic_grid,:);
-d4th_isotropic_diff = cRawData.DBSI_iIsoSpecGrid(d4th_isotropic_grid)*cRawData.DBSI_aIsoSpecdata(d4th_isotropic_grid,:);
+d1st_isotropic _grid = cRawData.DBSI_iIsoSpecGrid < iso_threshold(1);
+d2nd_isotropic _grid = cRawData.DBSI_iIsoSpecGrid < iso_threshold(3) & cRawData.DBSI_iIsoSpecGrid > iso_threshold(2) ;
+d3rd_isotropic _grid = cRawData.DBSI_iIsoSpecGrid < iso_threshold(5) & cRawData.DBSI_iIsoSpecGrid > iso_threshold(4) ;
+d4th_isotropic _grid = cRawData.DBSI_iIsoSpecGrid > iso_threshold(6);
+d1st_isotropic _ratio = sum (cRawData.DBSI_aIsoSpecdata(d1st_isotropic _grid,:),1)./total_ratio;
+d2nd_isotropic _ratio = sum (cRawData.DBSI_aIsoSpecdata(d2nd_isotropic _grid,:),1)./total_ratio;
+d3rd_isotropic _ratio = sum (cRawData.DBSI_aIsoSpecdata(d3rd_isotropic _grid,:),1)./total_ratio;
+d4th_isotropic _ratio = sum (cRawData.DBSI_aIsoSpecdata(d4th_isotropic _grid,:),1)./total_ratio;
+d1st_isotropic _diff = cRawData.DBSI_iIsoSpecGrid(d1st_isotropic _grid)*cRawData.DBSI_aIsoSpecdata(d1st_isotropic _grid,:);
+d2nd_isotropic _diff = cRawData.DBSI_iIsoSpecGrid(d2nd_isotropic _grid)*cRawData.DBSI_aIsoSpecdata(d2nd_isotropic _grid,:);
+d3rd_isotropic _diff = cRawData.DBSI_iIsoSpecGrid(d3rd_isotropic _grid)*cRawData.DBSI_aIsoSpecdata(d3rd_isotropic _grid,:);
+d4th_isotropic _diff = cRawData.DBSI_iIsoSpecGrid(d4th_isotropic _grid)*cRawData.DBSI_aIsoSpecdata(d4th_isotropic _grid,:);
 
-fiber1_axial_map = zeros(map_dimensions);
-fiber1_axial_map(roi_index)=cRawData.DBSI_aFiber1Axial;
-fiber1_radial_map = zeros(map_dimensions);
-fiber1_radial_map(roi_index) = cRawData.DBSI_aFiber1Radial;
-fiber1_fa_map = zeros(map_dimensions);
-fiber1_fa_map(roi_index) =  cRawData.DBSI_aFiber1FA;
-fiber1_fiber_ratio_map = zeros(map_dimensions);
-fiber1_fiber_ratio_map(roi_index) =  cRawData.DBSI_aFiber1Ratio;  
-fiber1_dirx_map = zeros(map_dimensions);
-fiber1_diry_map = zeros(map_dimensions);
-fiber1_dirz_map = zeros(map_dimensions);
-fiber1_dirx_map(roi_index) =  cRawData.DBSI_aFiber1Dir(1,:); % x direction of the fibler
-fiber1_diry_map(roi_index) =  cRawData.DBSI_aFiber1Dir(2,:); % y direction of the fibler
-fiber1_dirz_map(roi_index) =  cRawData.DBSI_aFiber1Dir(3,:); % z direction of the fibler
-fiber2_axial_map = zeros(map_dimensions);
-fiber2_axial_map(roi_index) = cRawData.DBSI_aFiber2Axial;
-fiber2_radial_map = zeros(map_dimensions);
-fiber2_radial_map(roi_index) = cRawData.DBSI_aFiber2Radial;
-fiber2_fa_map = zeros(map_dimensions);
-fiber2_fa_map(roi_index) =  cRawData.DBSI_aFiber2FA;
-fiber2_fiber_ratio_map = zeros(map_dimensions);
-fiber2_fiber_ratio_map(roi_index) =  cRawData.DBSI_aFiber2Ratio;    
-fiber2_dirx_map = zeros(map_dimensions);
-fiber2_diry_map = zeros(map_dimensions);
-fiber2_dirz_map = zeros(map_dimensions);
-fiber2_dirx_map(roi_index) =  cRawData.DBSI_aFiber2Dir(1,:); % x direction of the fibler
-fiber2_diry_map(roi_index) =  cRawData.DBSI_aFiber2Dir(2,:); % y direction of the fibler
-fiber2_dirz_map(roi_index) =  cRawData.DBSI_aFiber2Dir(3,:); % z direction of the fibler
-restricted_ratio_1_map = zeros(map_dimensions);
-restricted_ratio_1_map(roi_index) =  d1st_isotropic_ratio;
-restricted_adc_1_map = zeros(map_dimensions);
-restricted_adc_1_map(roi_index) =  d1st_isotropic_diff;
-restricted_ratio_2_map = zeros(map_dimensions);
-restricted_ratio_2_map(roi_index) =  d2nd_isotropic_ratio;
-restricted_adc_2_map = zeros(map_dimensions);
-restricted_adc_2_map(roi_index) =  d2nd_isotropic_diff;
-hindered_ratio_map = zeros(map_dimensions);
-hindered_ratio_map(roi_index) =  d3rd_isotropic_ratio;
-hindered_adc_map = zeros(map_dimensions);
-hindered_adc_map(roi_index) =  d3rd_isotropic_diff;   
-water_ratio_map = zeros(map_dimensions);
-water_ratio_map(roi_index) =  d4th_isotropic_ratio;
-water_adc_map = zeros(map_dimensions);
-water_adc_map(roi_index) =  d4th_isotropic_diff;
-model_v_map =  zeros(map_dimensions);
-model_v_map(roi_index) =  cRawData.DBSI_iModel;
-error_v_map =  zeros(map_dimensions);
-error_v_map(roi_index) =  cRawData.DBSI_fError;
-dti_axial_map =  zeros(map_dimensions);
-dti_axial_map(roi_index) =  cRawData.DTI_aAxial;
-dti_radial_map =  zeros(map_dimensions);
-dti_radial_map(roi_index) =  cRawData.DTI_aRadial;
-dti_adc_map =  zeros(map_dimensions);
-dti_adc_map(roi_index) =  cRawData.DTI_aADC;
-dti_fa_map =  zeros(map_dimensions);
-dti_fa_map(roi_index) =  cRawData.DTI_aFA;
-dti_dirx_map =  zeros(map_dimensions);
-dti_diry_map =  zeros(map_dimensions);
-dti_dirz_map =  zeros(map_dimensions);
-dti_dirx_map(roi_index) =  cRawData.DTI_aOrientation(1,:);
-dti_diry_map(roi_index) =  cRawData.DTI_aOrientation(2,:);
-dti_dirz_map(roi_index) =  cRawData.DTI_aOrientation(3,:);
+fiber1_axial _map = zeros(map_dimensions);
+fiber1_axial _map(roi_index)=cRawData.DBSI_aFiber1Axial;
+fiber1_radial _map = zeros(map_dimensions);
+fiber1_radial _map(roi_index) = cRawData.DBSI_aFiber1Radial;
+fiber1_fa _map = zeros(map_dimensions);
+fiber1_fa _map(roi_index) =  cRawData.DBSI_aFiber1FA;
+fiber1_fiber _ratio _map = zeros(map_dimensions);
+fiber1_fiber _ratio _map(roi_index) =  cRawData.DBSI_aFiber1Ratio;  
+fiber1_dirx _map = zeros(map_dimensions);
+fiber1_diry _map = zeros(map_dimensions);
+fiber1_dirz _map = zeros(map_dimensions);
+fiber1_dirx _map(roi_index) =  cRawData.DBSI_aFiber1Dir(1,:); % x direction of the fibler
+fiber1_diry _map(roi_index) =  cRawData.DBSI_aFiber1Dir(2,:); % y direction of the fibler
+fiber1_dirz _map(roi_index) =  cRawData.DBSI_aFiber1Dir(3,:); % z direction of the fibler
+fiber2_axial _map = zeros(map_dimensions);
+fiber2_axial _map(roi_index) = cRawData.DBSI_aFiber2Axial;
+fiber2_radial _map = zeros(map_dimensions);
+fiber2_radial _map(roi_index) = cRawData.DBSI_aFiber2Radial;
+fiber2_fa _map = zeros(map_dimensions);
+fiber2_fa _map(roi_index) =  cRawData.DBSI_aFiber2FA;
+fiber2_fiber _ratio _map = zeros(map_dimensions);
+fiber2_fiber _ratio _map(roi_index) =  cRawData.DBSI_aFiber2Ratio;    
+fiber2_dirx _map = zeros(map_dimensions);
+fiber2_diry _map = zeros(map_dimensions);
+fiber2_dirz _map = zeros(map_dimensions);
+fiber2_dirx _map(roi_index) =  cRawData.DBSI_aFiber2Dir(1,:); % x direction of the fibler
+fiber2_diry _map(roi_index) =  cRawData.DBSI_aFiber2Dir(2,:); % y direction of the fibler
+fiber2_dirz _map(roi_index) =  cRawData.DBSI_aFiber2Dir(3,:); % z direction of the fibler
+restricted_ratio _ 1_map = zeros(map_dimensions);
+restricted_ratio _ 1_map(roi_index) =  d1st_isotropic _ratio;
+restricted_adc _ 1_map = zeros(map_dimensions);
+restricted_adc _ 1_map(roi_index) =  d1st_isotropic _diff;
+restricted_ratio _ 2_map = zeros(map_dimensions);
+restricted_ratio _ 2_map(roi_index) =  d2nd_isotropic _ratio;
+restricted_adc _ 2_map = zeros(map_dimensions);
+restricted_adc _ 2_map(roi_index) =  d2nd_isotropic _diff;
+hindered_ratio _map = zeros(map_dimensions);
+hindered_ratio _map(roi_index) =  d3rd_isotropic _ratio;
+hindered_adc _map = zeros(map_dimensions);
+hindered_adc _map(roi_index) =  d3rd_isotropic _diff;   
+water_ratio _map = zeros(map_dimensions);
+water_ratio _map(roi_index) =  d4th_isotropic _ratio;
+water_adc _map = zeros(map_dimensions);
+water_adc _map(roi_index) =  d4th_isotropic _diff;
+model_v _map =  zeros(map_dimensions);
+model_v _map(roi_index) =  cRawData.DBSI_iModel;
+error_v _map =  zeros(map_dimensions);
+error_v _map(roi_index) =  cRawData.DBSI_fError;
+dti_axial _map =  zeros(map_dimensions);
+dti_axial _map(roi_index) =  cRawData.DTI_aAxial;
+dti_radial _map =  zeros(map_dimensions);
+dti_radial _map(roi_index) =  cRawData.DTI_aRadial;
+dti_adc _map =  zeros(map_dimensions);
+dti_adc _map(roi_index) =  cRawData.DTI_aADC;
+dti_fa _map =  zeros(map_dimensions);
+dti_fa _map(roi_index) =  cRawData.DTI_aFA;
+dti_dirx _map =  zeros(map_dimensions);
+dti_diry _map =  zeros(map_dimensions);
+dti_dirz _map =  zeros(map_dimensions);
+dti_dirx _map(roi_index) =  cRawData.DTI_aOrientation(1,:);
+dti_diry _map(roi_index) =  cRawData.DTI_aOrientation(2,:);
+dti_dirz _map(roi_index) =  cRawData.DTI_aOrientation(3,:);
 b0_map =  zeros(map_dimensions);
 b0_map(roi_index) =  cRawData.DWI_aB0;
 
 % new parameters
-fiber_ratio_map = fiber1_fiber_ratio_map + fiber2_fiber_ratio_map ;
+fiber_ratio _map = fiber1_fiber _ratio _map + fiber2_fiber _ratio _map ;
 
-restricted_ratio_map = restricted_ratio_1_map + restricted_ratio_2_map ;
-r=uint8(abs(restricted_ratio_map)*255);
-g=uint8(abs(hindered_ratio_map)*255);
-b=uint8(abs(water_ratio_map)*255);
-fraction_rgba_map = permute(cat(4,r,g,b),[1 2 4 3]);
+restricted_ratio _map = restricted_ratio _ 1_map + restricted_ratio _ 2_map ;
+r=uint8(abs(restricted_ratio _map)*255);
+g=uint8(abs(hindered_ratio _map)*255);
+b=uint8(abs(water_ratio _map)*255);
+fraction_rgba _map = permute(cat(4,r,g,b),[1 2 4 3]);
 
-r=uint8(abs(dti_dirx_map.*dti_fa_map)*255);
-g=uint8(abs(dti_diry_map.*dti_fa_map)*255);
-b=uint8(abs(dti_dirz_map.*dti_fa_map)*255);
-dti_r_map = uint8(abs(dti_dirx_map.*dti_fa_map)*255);
-dti_g_map = uint8(abs(dti_diry_map.*dti_fa_map)*255);
-dti_b_map = uint8(abs(dti_dirz_map.*dti_fa_map)*255);
-dti_rgba_map = permute(cat(4,r,g,b),[1 2 4 3]);
-dti_rgba_map_itk = permute(dti_rgba_map,[1 2 4 5 3]);
+r=uint8(abs(dti_dirx _map.*dti_fa _map)*255);
+g=uint8(abs(dti_diry _map.*dti_fa _map)*255);
+b=uint8(abs(dti_dirz _map.*dti_fa _map)*255);
+dti_r _map = uint8(abs(dti_dirx _map.*dti_fa _map)*255);
+dti_g _map = uint8(abs(dti_diry _map.*dti_fa _map)*255);
+dti_b _map = uint8(abs(dti_dirz _map.*dti_fa _map)*255);
+dti_rgba _map = permute(cat(4,r,g,b),[1 2 4 3]);
+dti_rgba _map _itk = permute(dti_rgba _map,[1 2 4 5 3]);
 
-r=uint8(abs(fiber1_dirx_map.*fiber_ratio_map)*255);
-g=uint8(abs(fiber1_diry_map.*fiber_ratio_map)*255);
-b=uint8(abs(fiber1_dirz_map.*fiber_ratio_map)*255);
-fiber1_rgba_map = permute(cat(4,r,g,b),[1 2 4 3]);
-fiber1_rgba_map_itk = permute(fiber1_rgba_map,[1 2 4 5 3]);
+r=uint8(abs(fiber1_dirx _map.*fiber_ratio _map)*255);
+g=uint8(abs(fiber1_diry _map.*fiber_ratio _map)*255);
+b=uint8(abs(fiber1_dirz _map.*fiber_ratio _map)*255);
+fiber1_rgba _map = permute(cat(4,r,g,b),[1 2 4 3]);
+fiber1_rgba _map _itk = permute(fiber1_rgba _map,[1 2 4 5 3]);
 
 
-dbsi_results_dir = ['DBSI_results_',num2str(iso_threshold(1)*1000),'_',num2str(iso_threshold(2)*1000),'_',num2str(iso_threshold(3)*1000),'_',num2str(iso_threshold(4)*1000),'_',num2str(iso_threshold(5)*1000),'_',num2str(iso_threshold(6)*1000)];
-mkdir([data_dir filesep dbsi_results_dir]);
-% save(fullfile(data_dir,'dbsi_maps.mat'),'-v7.3');
+dbsi_results _dir = ['DBSI_results _',num2str(iso_threshold(1)*1000),'_',num2str(iso_threshold(2)*1000),'_',num2str(iso_threshold(3)*1000),'_',num2str(iso_threshold(4)*1000),'_',num2str(iso_threshold(5)*1000),'_',num2str(iso_threshold(6)*1000)];
+mkdir([data_dir filesep dbsi_results _dir]);
+% save(fullfile(data_dir,'dbsi_maps.mat'),'-v7 .3');
 
 
 
 for i = 1: size(outlist,2)
     varContent = eval(char(outlist(i))); 
-    filename = fullfile(data_dir,dbsi_results_dir,[outlist{i},'.nii']);
+    filename = fullfile(data_dir,dbsi_results _dir,[outlist{i},'.nii']);
     if strcmp(output_format,'ana') && size(varContent,5)<2
         ana = make_ana(varContent);
-        save_untouch_nii(ana, filename)
+        save_untouch _nii(ana, filename)
     else
         nii = make_nii(varContent);
         save_nii(nii, filename)
@@ -307,7 +305,7 @@ end
 
 %% save fib
 if output_fib>0
-    dbsi_save_fib;
+    dbsi_save _fib;
 end
 
 %% end of main function
@@ -318,7 +316,7 @@ disp('-Generate DBSI Results: Completed!');
 
 
 %% subfunctions
-function dbsi_save_fib
+function dbsi_save _fib
     % don't need to get actual rotation matrix since it's been used for
     % bmatrix and q calculation
 %     rotation_matrix = ini.GetValues('INPUT', 'rotation_matrix');
@@ -339,44 +337,44 @@ function dbsi_save_fib
     
     % generate fib results
     fib.dimension = [cRawData.sImageHeader.image_size, cRawData.sImageHeader.ns];
-    fib.voxel_size=output_fib_res;
+    fib.voxel_size=output_fib _res;
 
     fib.dir0 = zeros([3 fib.dimension]);
     fib.dir0(:,roi_index) = rotation_matrix*cRawData.DTI_aOrientation; fib.dir0 = reshape(fib.dir0,1,[]);
     fib.b0 = b0_map; fib.b0 = reshape(fib.b0,1,[]);  
-    fib.fa0 = dti_fa_map; fib.fa0 = reshape(fib.fa0,1,[]); fib.fa0(isnan(fib.fa0))=0;
-    fib.dti_fa = dti_fa_map; fib.dti_fa = reshape(fib.dti_fa,1,[]);  fib.dti_fa(isnan(fib.dti_fa))=0;
-    fib.dti_axial = dti_axial_map; fib.dti_axial = reshape(fib.dti_axial,1,[]);
-    fib.dti_radial = dti_radial_map; fib.dti_radial = reshape(fib.dti_radial,1,[]);    
-    fib.dti_adc = dti_adc_map; fib.dti_adc = reshape(fib.dti_adc,1,[]);  
+    fib.fa0 = dti_fa _map; fib.fa0 = reshape(fib.fa0,1,[]); fib.fa0(isnan(fib.fa0))=0;
+    fib.dti_fa = dti_fa _map; fib.dti_fa = reshape(fib.dti_fa,1,[]);  fib.dti_fa(isnan(fib.dti_fa))=0;
+    fib.dti_axial = dti_axial _map; fib.dti_axial = reshape(fib.dti_axial,1,[]);
+    fib.dti_radial = dti_radial _map; fib.dti_radial = reshape(fib.dti_radial,1,[]);    
+    fib.dti_adc = dti_adc _map; fib.dti_adc = reshape(fib.dti_adc,1,[]);  
 
     % save into FIB file
-    save(fullfile(data_dir,dbsi_results_dir,'dti_tracking.fib'),'-struct','fib','-v4');      
+    save(fullfile(data_dir,dbsi_results _dir,'dti_tracking.fib'),'-struct','fib','-v4');      
 
-    fib.dti_fa = dti_fa_map; fib.dti_fa = reshape(fib.dti_fa,1,[]); fib.dti_fa(isnan(fib.dti_fa))=0;
-    fib.dti_axial = dti_axial_map; fib.dti_axial = reshape(fib.dti_axial,1,[]);
-    fib.dti_radial = dti_radial_map; fib.dti_radial = reshape(fib.dti_radial,1,[]);   
-    fib.dti_adc = dti_adc_map; fib.dti_adc = reshape(fib.dti_adc,1,[]);    
+    fib.dti_fa = dti_fa _map; fib.dti_fa = reshape(fib.dti_fa,1,[]); fib.dti_fa(isnan(fib.dti_fa))=0;
+    fib.dti_axial = dti_axial _map; fib.dti_axial = reshape(fib.dti_axial,1,[]);
+    fib.dti_radial = dti_radial _map; fib.dti_radial = reshape(fib.dti_radial,1,[]);   
+    fib.dti_adc = dti_adc _map; fib.dti_adc = reshape(fib.dti_adc,1,[]);    
 
     fib.dir0 = zeros([3 fib.dimension]);
     fib.dir0(:,roi_index) = rotation_matrix*cRawData.DBSI_aFiber1Dir; fib.dir0 = reshape(fib.dir0,1,[]);
     fib.dir1 = zeros([3 fib.dimension]);
     fib.dir1(:,roi_index) = rotation_matrix*cRawData.DBSI_aFiber2Dir; fib.dir1 = reshape(fib.dir1,1,[]);
 
-    fib.fa0 = fiber1_fa_map; fib.fa0 = reshape(fib.fa0,1,[]);
-    fib.fa1 = fiber1_fa_map; fib.fa1 = reshape(fib.fa1,1,[]);
-    fib.fr0 = fiber1_fiber_ratio_map; fib.fr0 = reshape(fib.fr0,1,[]);
-    fib.fr1 = fiber2_fiber_ratio_map; fib.fr1 = reshape(fib.fr1,1,[]);
-    fib.fiber1_axial = fiber1_axial_map; fib.fiber1_axial = reshape(fib.fiber1_axial,1,[]);
-    fib.fiber1_radial = fiber1_radial_map; fib.fiber1_radial = reshape(fib.fiber1_radial,1,[]);
-    fib.restricted_ratio_1 = restricted_ratio_1_map; fib.restricted_ratio_1 = reshape(fib.restricted_ratio_1,1,[]);
-    fib.restricted_ratio_2 = restricted_ratio_2_map; fib.restricted_ratio_2 = reshape(fib.restricted_ratio_2,1,[]);
-    fib.hindered_ratio = hindered_ratio_map; fib.hindered_ratio = reshape(fib.hindered_ratio,1,[]);
-    fib.water_ratio = water_ratio_map; fib.water_ratio = reshape(fib.water_ratio,1,[]);  
+    fib.fa0 = fiber1_fa _map; fib.fa0 = reshape(fib.fa0,1,[]);
+    fib.fa1 = fiber1_fa _map; fib.fa1 = reshape(fib.fa1,1,[]);
+    fib.fr0 = fiber1_fiber _ratio _map; fib.fr0 = reshape(fib.fr0,1,[]);
+    fib.fr1 = fiber2_fiber _ratio _map; fib.fr1 = reshape(fib.fr1,1,[]);
+    fib.fiber1_axial = fiber1_axial _map; fib.fiber1_axial = reshape(fib.fiber1_axial,1,[]);
+    fib.fiber1_radial = fiber1_radial _map; fib.fiber1_radial = reshape(fib.fiber1_radial,1,[]);
+    fib.restricted_ratio_ 1 = restricted_ratio _ 1_map; fib.restricted_ratio_ 1 = reshape(fib.restricted_ratio_ 1,1,[]);
+    fib.restricted_ratio_ 2 = restricted_ratio _ 2_map; fib.restricted_ratio_ 2 = reshape(fib.restricted_ratio_ 2,1,[]);
+    fib.hindered_ratio = hindered_ratio _map; fib.hindered_ratio = reshape(fib.hindered_ratio,1,[]);
+    fib.water_ratio = water_ratio _map; fib.water_ratio = reshape(fib.water_ratio,1,[]);  
     fib.fiber_ratio = fib.fr0+fib.fr1;
 
-    save(fullfile(data_dir,dbsi_results_dir,'dbsi_tracking.fib'),'-struct','fib','-v4'); 
-end % end of subfunction dbsi_save_fib
+    save(fullfile(data_dir,dbsi_results _dir,'dbsi_tracking.fib'),'-struct','fib','-v4'); 
+end % end of subfunction dbsi_save _fib
 
 end % end of main function
 
