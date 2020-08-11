@@ -1,12 +1,7 @@
 #----------------------------------------------------------------------
 # SVM for brain tumor DHI classification
 # Patient stratification was used
-#
-# Author: Anthony_Wu, Zezhong Ye
-#
-# Contact: atwu@wustl.edu, ze-zhong@wustl.edu
-# Date: 08-14-2019
-#-------------------------------------------------------------------------------------------
+--------------------------------------------------------------------
 
 import pandas as pd
 import glob2 as glob

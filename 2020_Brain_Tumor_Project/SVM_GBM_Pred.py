@@ -1,11 +1,6 @@
 #----------------------------------------------------------------------
 # SVM for brain tumor DHI classification
 # Patient stratification was used
-#
-# Author: Anthony_Wu
-#
-# Contact: atwu@wustl.edu
-# Date: 08-14-2019
 #-------------------------------------------------------------------------------------------
 from sklearn import datasets
 from sklearn.metrics import confusion_matrix

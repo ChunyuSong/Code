@@ -1,11 +1,6 @@
 #----------------------------------------------------------------------
 # extract voxel information
 # get metric values from MRI
-#
-# Author: Zezhong Ye & Ajit George, Washington University School of Medicine
-# Copyright: Copyright 2020, Washington University School of Medicine
-# Email: ze-zhong@wustl.edu
-# Date: 01.16.2020   
 #     
 #-------------------------------------------------------------------------------------------
 

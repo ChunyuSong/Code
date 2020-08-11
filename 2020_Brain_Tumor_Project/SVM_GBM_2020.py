@@ -2,12 +2,6 @@
 # SVM for brain tumor DHI classification
 #
 # Patient stratification was used
-#
-# Author: Zezhong Ye, Anthony_Wu
-#
-# Contact: ze-zhong@wustl.edu, atwu@wustl.edu
-#
-# Date: 08-14-2019
 #-------------------------------------------------------------------------------------------
 import pandas as pd
 import os
@@ -388,8 +382,8 @@ if __name__ == '__main__':
     kernel_function = 'poly'
     test_names = ['B_122_4_5', 'B_122_3', 'B_127_1', 'B_127_2']
 
-    proj_dir   = r'\\10.39.42.102\temp\Anthony_Wu\Zezhong_assist\JAAH'
-    result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2017_Science_Translational_Medicine\2019_yzz'
+    proj_dir   = r'\\10.39.42.102\temp\JAAH'
+    result_dir = r'\\10.39.42.102\temp\2017_Science_Translational_Medicine\2019'
     DBSI_file  = 'all_data_brain.csv'
     DTI_file   = 'DTI_data_labeled.csv'
 
