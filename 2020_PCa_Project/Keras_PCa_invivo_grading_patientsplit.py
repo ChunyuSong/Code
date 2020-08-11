@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # 
 # Modified to accommodate patient split
 # Modifier: Anthony Wu
@@ -788,9 +785,9 @@ if __name__ == '__main__':
     '''
 
     # data and results path 
-    project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCA_in_vivo_data_excel'
-    result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_PCa_AI\invivo_grading\result'
-    log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\2019_PCa_AI\invivo_grading\log'
+    project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCA_in_vivo_data_excel'
+    result_dir = r'\\10.39.42.102\temp\2019_PCa_AI\invivo_grading\result'
+    log_dir = r'\\10.39.42.102\temp\2019_PCa_AI\invivo_grading\log'
 
     # ----------------------------------------------------------------------------------
     # run the model

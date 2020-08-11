@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # TensorBoard support:
 #   :scalars:
 #     - accuracy

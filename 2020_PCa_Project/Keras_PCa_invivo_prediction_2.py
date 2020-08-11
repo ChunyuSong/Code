@@ -9,8 +9,6 @@ This is a temporary script file.
 # DNN model based on Keras
 # batch normalization layers were used
 # dropout layers were used
-# Author: Zezhong Ye;
-# Date: 03.29.2019
 #
 # :to be implemented:
 #     - image embeddings (as in https://www.tensorflow.org/get_started/embedding_viz)
@@ -91,15 +89,15 @@ display_step = 10
 print("PCa DNN classification ROC analysis: start...")
 
 # data and results path for windows system
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\data'
-result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\result'
-log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\log'
-pred_dir = r'\\10.39.42.102\temp\Zezhong_Ye\PCa_prediction\test_1'
+project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\data'
+result_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\result'
+log_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\log'
+pred_dir = r'\\10.39.42.102\temp\PCa_prediction\test_1'
 
 # # data path for linux system
-# project_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
-# result_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
-# log_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
+# project_dir = '/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
+# result_dir = '/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
+# log_dir = '/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
 
 if not os.path.exists(result_dir):
     print('result directory does not exist - creating...')

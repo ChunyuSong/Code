@@ -37,8 +37,8 @@ def replace_nan():
 
 if __name__ == '__main__':
 
-    proj_dir   = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
-    result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
+    proj_dir   = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
+    result_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
     data_file  = 'benign_mpMRI_voxel_22_May_2020_00_51_26.csv'
     save_file  = 'benign_mpMRI_voxel.csv'
 

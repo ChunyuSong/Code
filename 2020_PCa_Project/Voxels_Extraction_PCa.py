@@ -1,11 +1,6 @@
 #----------------------------------------------------------------------
 # extract voxel information
 # get metric values from MRI
-#
-# Author: Zezhong Ye & Ajit George, Washington University School of Medicine
-# Copyright: Copyright 2020, Washington University School of Medicine
-# Email: ze-zhong@wustl.edu
-# Date: 01.16.2020   
 #     
 #-------------------------------------------------------------------------------------------
 
@@ -363,9 +358,9 @@ class voxel(object):
  
 if __name__ == '__main__':
 
-    proj_dir    = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
-    result_dir  = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
-    log_dir     = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy\log'
+    proj_dir    = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
+    result_dir  = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy'
+    log_dir     = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\ALL_DBSI_DATA_new_thresh_all\Non_PCa_without_biopsy\log'
     DBSI_folder = 'DBSI_results_%s_%s_%s_%s_%s_%s'      # 'DHISTO_results_%s_%s_%s_%s_%s_%s'
     csv_name    = 'benign_mpMRI_voxel'
     roi_1       = 'c.nii.gz'            

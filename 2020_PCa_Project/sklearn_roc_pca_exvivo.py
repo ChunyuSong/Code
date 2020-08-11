@@ -1,9 +1,6 @@
 
 #------------------------------------------------------------------------------------------
 # deep learning classifier using sklearn framework
-#
-# Author: Zezhong Ye;
-# Date: 03.30.2019
 # ROC support:
 #   :scalars:
 #     - accuracy
@@ -74,14 +71,14 @@ max_iteration = 500
 print("PCa DNN classification ROC analysis: start...")
 
 # data path for windows system
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning'
-result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Deep_Learning\pca_exvivo_1\result'
-log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Deep_Learning\pca_exvivo_1\log'
+project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_ex_vivo\Deep_Learning'
+result_dir = r'\\10.39.42.102\temp\Deep_Learning\pca_exvivo_1\result'
+log_dir = r'\\10.39.42.102\temp\Deep_Learning\pca_exvivo_1\log'
 
 # data path for linux or mac system
-# project_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/'
-# result_dir = '/bmrp092temp/Zezhong_Ye/Deep_Learning/pca_exvivo_grading/result/'
-# log_dir = '/bmrp092temp/Zezhong_Ye/Deep_Learning/pca_exvivo_grading/log/'
+# project_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/'
+# result_dir = '/bmrp092temp/Deep_Learning/pca_exvivo_grading/result/'
+# log_dir = '/bmrp092temp/Deep_Learning/pca_exvivo_grading/log/'
 
 if not os.path.exists(result_dir):
     print('result directory does not exist - creating...')

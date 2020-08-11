@@ -3,9 +3,6 @@
 # deep learning classifier for ex classification on ex vivo PCa Gleason grades 
 # individual ROC for each class was plotted
 # 
-#
-# Author: Zezhong Ye;
-# Date: 04.12.2019
 # Keras support:
 #   :scalars:
 #     - accuracy
@@ -109,9 +106,9 @@ result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learn
 log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning\invivo_grading\log'
 
 # # data path for linux or mac system
-# project_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/'
-# result_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/result/'
-# log_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/log/'
+# project_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/'
+# result_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/result/'
+# log_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/log/'
 
 if not os.path.exists(result_dir):
     print('result directory does not exist - creating...')

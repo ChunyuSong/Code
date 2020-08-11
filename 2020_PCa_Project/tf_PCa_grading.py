@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # TensorBoard support:
 #   :scalars:
 #     - accuracy
@@ -88,14 +85,14 @@ n_hidden10 = 50
 print("loading data: start...")
 
 # data path for windows system
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning'
-result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning\grading\result'
-log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning\grading\log'
+project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_ex_vivo\Deep_Learning'
+result_dir = r'\\10.39.42.102\temp\Prostate_Cancer_ex_vivo\Deep_Learning\grading\result'
+log_dir = r'\\10.39.42.102\temp\Prostate_Cancer_ex_vivo\Deep_Learning\grading\log'
 
 # # data path for linux or mac system
-# project_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/'
-# result_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/result/'
-# log_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_ex_vivo/Deep_Learning/log/'
+# project_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/'
+# result_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/result/'
+# log_dir = '/bmrp092temp/Prostate_Cancer_ex_vivo/Deep_Learning/log/'
 
 if not os.path.exists(result_dir):
     print('result directory does not exist - creating...')

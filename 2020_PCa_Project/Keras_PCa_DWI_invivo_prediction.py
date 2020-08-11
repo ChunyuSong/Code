@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # TensorBoard support:
 #   :scalars:
 #     - accuracy
@@ -510,10 +507,10 @@ if __name__ == '__main__':
     '''
 
     # data and results path 
-    project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Deep_Learning'
-    result_dir  = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Deep_Learning'
-    log_dir     = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Deep_Learning\log'
-    pred_dir    = r'\\10.39.42.102\temp\Zezhong_Ye\PCa_prediction\case_1_DWI'
+    project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Deep_Learning'
+    result_dir  = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Deep_Learning'
+    log_dir     = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Deep_Learning\log'
+    pred_dir    = r'\\10.39.42.102\temp\PCa_prediction\case_1_DWI'
            
     file           = 'PCa_DWI.csv'
     pred_file      = 'PCa.csv'

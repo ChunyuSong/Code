@@ -1,9 +1,6 @@
 #----------------------------------------------------------------------
 # deep learning classifier using a multiple layer perceptron (MLP)
 # batch normalization was used
-#
-# Author: Zezhong Ye;
-# Date: 03.14.2019
 # TensorBoard support:
 #   :scalars:
 #     - accuracy
@@ -80,14 +77,14 @@ n_hidden10 = n_neurons
 print("loading data: start...")
 
 # data and results path for windows system
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\data'
-result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\result'
-log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\log'
+project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\data'
+result_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\result'
+log_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCa_Benign_Classification\log'
 
 # data path for linux system
-# project_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
-# result_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
-# log_dir = '/bmrp092temp/Zezhong_Ye/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
+# project_dir = '/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
+# result_dir = '/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
+# log_dir = '/bmrp092temp/Prostate_Cancer_Project_Shanghai/PCa_Machine_Learning/PCa_Benign_Classification/data/'
 
 if not os.path.exists(log_dir):
     print('log directory does not exist - creating...')

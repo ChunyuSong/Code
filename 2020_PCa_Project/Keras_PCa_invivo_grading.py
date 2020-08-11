@@ -2,8 +2,6 @@
 # DNN model based on Keras
 # batch normalization layers were used
 # dropout layers were used
-# Author: Zezhong Ye;
-# Date: 03.29.2019
 #
 # :to be implemented:
 #     - image embeddings (as in https://www.tensorflow.org/get_started/embedding_viz)
@@ -77,9 +75,9 @@ random_state = 42
 print("PCa DNN classification ROC analysis: start...")
 
 # data path for windows system
-project_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCA_in_vivo_data_excel'
-result_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning\invivo_grading\result'
-log_dir = r'\\10.39.42.102\temp\Zezhong_Ye\Prostate_Cancer_ex_vivo\Deep_Learning\invivo_grading\log'
+project_dir = r'\\10.39.42.102\temp\Prostate_Cancer_Project_Shanghai\PCa_Machine_Learning\PCA_in_vivo_data_excel'
+result_dir = r'\\10.39.42.102\temp\Prostate_Cancer_ex_vivo\Deep_Learning\invivo_grading\result'
+log_dir = r'\\10.39.42.102\temp\Prostate_Cancer_ex_vivo\Deep_Learning\invivo_grading\log'
 
 if not os.path.exists(result_dir):
     print('result directory does not exist - creating...')
